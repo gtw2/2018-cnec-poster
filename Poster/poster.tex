@@ -71,7 +71,7 @@
 \usepackage{xspace}
 
 \usepackage{tikz}
-\usetikzlibrary{positioning, arrows, decorations, shapes }
+\usetikzlibrary{positioning, arrows, decorations, shapes, arrows.meta}
 % Define block styles
 \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
 text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
@@ -102,7 +102,7 @@ minimum height=2em]
 	Using Cyclus for Online Diversion Detection of Shadow Fuel Cycles
 } % Poster title
 
-\author{Gregory T. Westphal, Kathryn D. Huff}
+\author{\textbf{Gregory T. Westphal}, Kathryn D. Huff}
 \institute{University of Illinios at Urbana-Champaign, Department of Nuclear, Plasma, and Radiological Engineering, Urbana, IL 61801}
 %----------------------------------------------------------------------------------------
 
@@ -118,7 +118,7 @@ minimum height=2em]
 
 \begin{columns}[t,totalwidth=\threecolwid] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
 
-\begin{column}{\sepwid}\end{column} % Empty spacer column
+\begin{column}{0.5\sepwid}\end{column} % Empty spacer column
 
 \begin{column}{\onecolwid} % The first column
 
@@ -127,12 +127,17 @@ minimum height=2em]
 %----------------------------------------------------------------------------------------
 
 \begin{alertblock}{Objectives}
-Apply Cyclus for online diversion detection by simulating the fuel cycle of a pyroprocessing plant
-and compare to false positive rate to previous methods.
 \begin{itemize}
-	\item Investigate promising signatures and observables.
-	\item Review existing nuclear diversion detection.
-	\item Identify successful algorithms in other fuel cycles.
+        \item Create high-fidelity reprocessing facility agent models (both 
+                aqueous and electrochemical/pyroprocessing).
+        \item Apply these models in Cyclus simulate material diversion in closed 
+                fuel cycles. 
+	\item Identify and characterize non-traditional signatures and 
+                observables in these facilities.
+	\item Extend successful algorithms for modeling diversion and diversion 
+                detection.
+        \item Characterize required detection sensitivities and corresponding 
+                false positive rates. 
 \end{itemize}
 
 \end{alertblock}
@@ -143,26 +148,58 @@ and compare to false positive rate to previous methods.
 
 \begin{block}{Background}
 
-Shown in Figure 1 is the expected fuel cycle, however, with each process there is opportunity for proliferation.
-In transportation of conversion and enrichment, for example, excess can be diverted without attention. Other
-scenarios such as unreported reactor operation, over-usage, or misuse \cite{boyer_2014}. However, for this work diversion will be
-of primary focus.
+Figure 1 shows a closed nuclear fuel cycle in which each process facility 
+presents an opportunity for diversion and proliferation.
 
 \begin{figure}
-	\includegraphics[width=1.0\linewidth]{fuel_cycle2.png}
-	\caption{Typical Nuclear fuel cycle without diversion \cite{Slovenske}.}
+	\includegraphics[width=0.7\linewidth]{fc-diagram.pdf}
+%	\includegraphics[width=1.0\linewidth]{fuel_cycle2.png}
+        %\input{fc-diagram}
+	\caption{Typical Nuclear fuel cycle without diversion \cite{huff_2018}.}
 \end{figure}
 
 \end{block}
 
 %----------------------------------------------------------------------------------------
+%	DIVERSION DETECTION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Diversion Detection}\end{block}
+
+	\begin{figure}
+		\includegraphics[width=0.9\linewidth]{Yilmaz_Graphic}
+		\caption{Example nuclear fuel cycle with diversion element \cite{Yilmaz_2016}}
+	\end{figure}
+
+        \begin{alertblock}{PLACEHOLDER FOR SHADOW GRAPHIC}
+	\begin{itemize}
+%		\setlength\itemsep{1em}
+		\item {\large Probabilistic search into the objective function or constraint models}
+		\item {\large Uncertainty in addition to mean}
+		\item {\large Uses random samples from probability distributions}
+		\item {\large E.g. Markov Switching-Model, Gaussian Process Regression}
+	\end{itemize}
+        \end{alertblock}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{column}{\onecolwid} % The second column
+%----------------------------------------------------------------------------------------
 %	SIGNATURES AND OBSERVABLES
 %----------------------------------------------------------------------------------------
 
 \begin{block}{Signatures and Observables}
-        Detection modes vary between each facility type, requiring a specific analysis of each processing plant to determine
-        signatures and observables resulting in highest success rate. Pyroprocessing facilities have four major systems with waste
-        that can be tracked: electroreduction, electrorefining, electrowinning, and metal fuel fabrication\cite{Borrelli_2017}.
+        Detection modes vary between each facility type, requiring a specific 
+        analysis of each processing plant to determine effective signatures and 
+        observables. For example, \textbf{pyroprocessing} has four major 
+        systems with observable waste: electroreduction, electrorefining, electrowinning, and metal fuel fabrication\cite{Borrelli_2017}.
         These systems have the corresponding signatures:
 	
 	\begin{itemize}
@@ -190,37 +227,6 @@ of primary focus.
 	
 \end{block}
 
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of the first column
-
-\begin{column}{\sepwid}\end{column} % Empty spacer column
-
-
-%----------------------------------------------------------------------------------------
-
-\begin{column}{\onecolwid} % The second column
-
-%----------------------------------------------------------------------------------------
-%	DIVERSION DETECTION
-%----------------------------------------------------------------------------------------
-
-\begin{block}{Diversion Detection}\end{block}
-
-	\begin{figure}
-		\includegraphics[width=0.9\linewidth]{Yilmaz_Graphic}
-		\caption{Example nuclear fuel cycle with diversion element \cite{Yilmaz_2016}}
-	\end{figure}
-
-        \begin{alertblock}{PLACEHOLDER FOR SHADOW GRAPHIC}
-	\begin{itemize}
-%		\setlength\itemsep{1em}
-		\item {\large Probabilistic search into the objective function or constraint models}
-		\item {\large Uncertainty in addition to mean}
-		\item {\large Uses random samples from probability distributions}
-		\item {\large E.g. Markov Switching-Model, Gaussian Process Regression}
-	\end{itemize}
-        \end{alertblock}
     
 %----------------------------------------------------------------------------------------
 %	PREVIOUS WORK
@@ -278,6 +284,16 @@ equates to the greatest decrease in risk.
 	Cyclus \cite{Huff_2016}, therefore data such as power draw or possibly transportation times and frequency will be explored 
 	instead \cite{Hou_2016}.
 \end{block}
+
+
+%--------------------------------------------------------
+% PROJECT TIMELINE
+%---------------------------------------------------------
+\begin{block}{Timeline}
+        \input{timeline}
+\end{block}
+
+
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
