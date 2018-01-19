@@ -32,7 +32,9 @@
   \node (pool)       [process, below of=reactor] {Spent Fuel Pool Storage};
   \node (cask)    [process, below of=pool] {Dry Cask Storage};
   \node (reprocess)    [greenbox, right of=reactor, xshift=2cm] {Separation and\\Reprocessing};
-  \node (repository) [redbox, below of=cask, yshift=1.5cm] {Repository};     
+  \node (repository) [bluebox, below of=cask, yshift=1.5cm] {Repository}; 
+  \node (pdivert)    [redbox, right of=enr, xshift=4.25cm] {Diverted Pu};
+  \node (heudivert)  [redbox, left of=fuelfab, xshift=-2.25cm] {Diverted HEU};
   % Specification of lines between nodes specified above
   % with aditional nodes for description 
 \draw[->]     (leach) |- (mill) node[midway] {unpurified\\$U_3O_8$};
@@ -49,7 +51,8 @@
   \draw [->] (reprocess.west) -- ++(-0.25,0) -- node[yshift=-1cm] 
   {recycling\\waste} ++ (0,-7.5) -- (repository.0);
   \draw [->] (reprocess.north) |- node[midway] {Pu and U}  (fuelfab.east);
-
+  \draw [->] (reprocess.east) -- ++(0.25,0) -- ++(0,5) (pdivert.south);
+  \draw [->] (enr.west) -- ++(-4,0) -- (heudivert.north);
   %\draw[->] (reactor.east) -- ++(2.6,0) -- ++(0,2) -- ++(0,2) --                
   %   node[xshift=1.2cm,yshift=-1.5cm, text width=2.5cm]
   %   {The activity comes to the foreground}(fuelfab.east);

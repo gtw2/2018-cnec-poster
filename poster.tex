@@ -71,7 +71,7 @@
 \usepackage{xspace}
 
 \usepackage{tikz}
-\usetikzlibrary{positioning, arrows, decorations, shapes, arrows.meta}
+\usetikzlibrary{positioning, arrows, decorations, shapes }
 % Define block styles
 \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
 text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
@@ -99,10 +99,10 @@ minimum height=2em]
 	\hspace{30cm}
 	\vspace{2cm}
 	\includegraphics[width=0.3\linewidth]{cnec_logo.png} \\
-	Signatures and Observables of Nuclear Fuel Cycle
+	Using Cyclus for Online Diversion Detection of Shadow Fuel Cycles
 } % Poster title
 
-\author{\textbf{Gregory T. Westphal}, Kathryn D. Huff}
+\author{Gregory T. Westphal, Kathryn D. Huff}
 \institute{University of Illinios at Urbana-Champaign, Department of Nuclear, Plasma, and Radiological Engineering, Urbana, IL 61801}
 %----------------------------------------------------------------------------------------
 
@@ -118,7 +118,7 @@ minimum height=2em]
 
 \begin{columns}[t,totalwidth=\threecolwid] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
 
-\begin{column}{0.5\sepwid}\end{column} % Empty spacer column
+\begin{column}{\sepwid}\end{column} % Empty spacer column
 
 \begin{column}{\onecolwid} % The first column
 
@@ -127,17 +127,12 @@ minimum height=2em]
 %----------------------------------------------------------------------------------------
 
 \begin{alertblock}{Objectives}
+Apply Cyclus for online diversion detection by simulating the fuel cycle of a pyroprocessing plant
+and compare to false positive rate to previous methods.
 \begin{itemize}
-        \item Create high-fidelity reprocessing facility agent models (both 
-                aqueous and electrochemical/pyroprocessing).
-        \item Apply these models in Cyclus to simulate material diversion in closed 
-                fuel cycles. 
-	\item Identify and characterize non-traditional signatures and 
-                observables in these facilities.
-	\item Extend successful algorithms for modeling diversion and diversion 
-                detection.
-        \item Characterize required detection sensitivities and corresponding 
-                false positive rates. 
+	\item Investigate promising signatures and observables.
+	\item Review existing nuclear diversion detection.
+	\item Identify successful algorithms in other fuel cycles.
 \end{itemize}
 
 \end{alertblock}
@@ -148,29 +143,52 @@ minimum height=2em]
 
 \begin{block}{Background}
 
-Figure 1 shows a closed nuclear fuel cycle in which each process facility 
-presents an opportunity for diversion and proliferation.
+Shown in Figure 1 is the expected fuel cycle, however, with each process there is opportunity for proliferation.
+In transportation of conversion and enrichment, for example, excess can be diverted without attention. Other
+scenarios such as unreported reactor operation, over-usage, or misuse \cite{boyer_2014}. However, for this work diversion will be
+of primary focus.
 
 \begin{figure}
-	\includegraphics[width=1\linewidth]{fc-diagram.pdf}
-%	\includegraphics[width=1.0\linewidth]{fuel_cycle2.png}
-        %\input{fc-diagram}
-	\caption{Typical Nuclear fuel cycle without diversion \cite{huff_2018}.}
+	\includegraphics[width=1.0\linewidth]{fuel_cycle2.png}
+	\caption{Typical Nuclear fuel cycle without diversion \cite{Slovenske}.}
 \end{figure}
 
 \end{block}
 
 %----------------------------------------------------------------------------------------
-%	Cyclus
+%	SIGNATURES AND OBSERVABLES
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Cyclus}\end{block}
+\begin{block}{Signatures and Observables}
+        Detection modes vary between each facility type, requiring a specific analysis of each processing plant to determine
+        signatures and observables resulting in highest success rate. Pyroprocessing facilities have four major systems with waste
+        that can be tracked: electroreduction, electrorefining, electrowinning, and metal fuel fabrication\cite{Borrelli_2017}.
+        These systems have the corresponding signatures:
+	
+	\begin{itemize}
+		\item \textbf{Metal Waste:} Solid, insoluble metal fission products.
+		\item \textbf{Ceramic Waste Electrowinning:} Waste salt LiCl-KCl contains trace amounts of $^{135}$Cs and $^{137}$Cs from
+		electrowinning the fuel.
+		\item \textbf{Vitrified Waste:} LiCl-KCl salt that contains TRU and Sr alongside rare-earth elements precipitated into gases
+		and vitrified with borosilicate glass.
+		\item \textbf{Ceramic Waste Electroreduction:} Through electroreduction, Li$_2$CO$_3$ is used to separate $^{135}$Cs, $^{137}$Cs, 
+		$^{129}$I and $^{14}$C which are solidified into ceramic waste.
+	\end{itemize}
 
-	\begin{figure}
-		\includegraphics[width=0.9\linewidth]{Cyclus_graph}
-		\caption{Cyclus API allows for modular build of simulations \cite{huff_2018}}
-	\end{figure}
-
+		External analysis is also needed for detection of potential rogue nuclear fuel cycles, in which direct observation can not be
+		utilized in most scenarios. For cases such as inspecting international fuel cycles or performing an audit on domestic networks
+		without physical intervention, the following signatures are viable:
+		
+	\begin{itemize}
+		\item \textbf{Power Draw:} Sign of overusing centrifuges \cite{Yilmaz_2016,Hou_2016}.
+		\item \textbf{Smoke Production:} Reactor producing high power than rated or reported for possible
+		nefarious reasons \cite{Yilmaz_2016}.
+		\item \textbf{Decay Heat:} Lower decay heat in casks signifies over-reporting of waste \cite{Kemp_2016}.
+		\item \textbf{Trace Quantities:} $^{135}$Xe and $^{85}$Kr are commonly emitted through processing along with tritium
+		from reactors. Need sensitive equipment but difficult to hide \cite{Borrelli_2017,Kemp_2016}.
+	\end{itemize}
+	
+\end{block}
 
 %----------------------------------------------------------------------------------------
 
@@ -182,62 +200,56 @@ presents an opportunity for diversion and proliferation.
 %----------------------------------------------------------------------------------------
 
 \begin{column}{\onecolwid} % The second column
+
 %----------------------------------------------------------------------------------------
-%	SIGNATURES AND OBSERVABLES
+%	DIVERSION DETECTION
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Signatures and Observables}
-        Detection modes vary between each facility type, requiring a specific 
-        analysis of each processing plant to determine effective signatures and 
-        observables. For example, \textbf{pyroprocessing} has four major 
-        systems with observable waste: electroreduction, electrorefining, electrowinning, and metal fuel fabrication\cite{Borrelli_2017}.
-        These systems have the corresponding signatures:
-        
-\begin{block}{Direct}	
-	\begin{itemize}
-		\item \textbf{Metal Waste:} Solid, insoluble metal fission products.
-		\item \textbf{Ceramic Waste Electrowinning:} Waste salt LiCl-KCl contains trace amounts of $^{135}$Cs and $^{137}$Cs from
-		electrowinning the fuel.
-		\item \textbf{Vitrified Waste:} LiCl-KCl salt that contains TRU and Sr alongside rare-earth elements precipitated into gases
-		and vitrified with borosilicate glass.
-		\item \textbf{Ceramic Waste Electroreduction:} Through electroreduction, Li$_2$CO$_3$ is used to separate $^{135}$Cs, $^{137}$Cs, 
-		$^{129}$I and $^{14}$C which are solidified into ceramic waste.
-	\end{itemize}
-\end{block}
-\begin{block}{Indirect}		
-	\begin{itemize}
-		\item \textbf{Power Draw:} Sign of overusing centrifuges \cite{Yilmaz_2016,Hou_2016}.
-		\item \textbf{Smoke Production:} Reactor producing high power than rated or reported for possible
-		nefarious reasons \cite{Yilmaz_2016}.
-		\item \textbf{Decay Heat:} Lower decay heat in casks signifies over-reporting of waste \cite{Kemp_2016}.
-		\item \textbf{Trace Quantities:} $^{135}$Xe and $^{85}$Kr are commonly emitted through processing along with tritium
-		from reactors. Need sensitive equipment but difficult to hide \cite{Borrelli_2017,Kemp_2016}.
-	\end{itemize}
-\end{block}
-\end{block}
+\begin{block}{Diversion Detection}\end{block}
 
+	\begin{figure}
+		\includegraphics[width=0.9\linewidth]{Yilmaz_Graphic}
+		\caption{Example nuclear fuel cycle with diversion element \cite{Yilmaz_2016}}
+	\end{figure}
+
+        \begin{alertblock}{PLACEHOLDER FOR SHADOW GRAPHIC}
+	\begin{itemize}
+%		\setlength\itemsep{1em}
+		\item {\large Probabilistic search into the objective function or constraint models}
+		\item {\large Uncertainty in addition to mean}
+		\item {\large Uses random samples from probability distributions}
+		\item {\large E.g. Markov Switching-Model, Gaussian Process Regression}
+	\end{itemize}
+        \end{alertblock}
     
 %----------------------------------------------------------------------------------------
 %	PREVIOUS WORK
 %----------------------------------------------------------------------------------------
 
 \begin{block}{Previous Work}
-Two new approaches to online diversion detection have recently been proposed \cite{Hou_2016,Yilmaz_2016}. Which rely on  power demand signatures. To facilitate online detection properties are as follows \cite{Yilmaz_2016}:
+Two new approaches to online diversion detection have recently been proposed \cite{Hou_2016,Yilmaz_2016}. Both
+approaches rely on the previously mentioned power demand signature. To facilitate online detection shipment transportation
+properties are used as follows \cite{Yilmaz_2016}:
 
 \begin{itemize}
 		\item Product enrichment
 		\item Frequency of shipments
 		\item Time to production
 	\end{itemize}
-The first proposed method uses maximum likelihood estimation to determine unreported routes of transport \cite{Hou_2016}. 
+These properties are used to determine the likelihood of a shadow shipment. The first proposed method uses maximum likelihood
+estimation to determine unreported routes of transport \cite{Hou_2016}. 
 \begin{figure}
 	\includegraphics{Hou_Network.png}
 	\caption{Maximum Likelihood Estimation nodal representation proposed by Hou et al\cite{Hou_2016}.}
 \end{figure}
-Figure 4 is a visual representation of a maximum likelihood network. The second approach instead assumes a Poisson 
-distribution \cite{Yilmaz_2016}. Combining these properties, expected values are derived using distributions for enrichments and shipment speeds. \\
+Shown in Figure 4 above, is a visual representation of the nodal network setup for maximum likelihood. The second approach
+similarly requires a known network but instead uses cumulative sum assuming a Poisson distribution \cite{Yilmaz_2016}.
+By combining the properties listed above, expected values can be derived using distributions for each enrichment and
+shipment speed. \\
 \vspace{10mm}
-Prior work also exists in prevention of shadow fuel cycles through analysis of varying plant archetypes \cite{Rossi_2016}. Rossi concludes that changing the material type such that technical difficulty is increased decrease in risk.
+Prior work also exists in prevention of shadow fuel cycles. Analysis of varying plant archetypes and their risk of theft/nefarious
+actions are provided \cite{Rossi_2016}. Rossi concludes that changing the material type such that technical difficulty is increased
+equates to the greatest decrease in risk.
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -252,7 +264,7 @@ Prior work also exists in prevention of shadow fuel cycles through analysis of v
 %	FUTURE WORK
 %----------------------------------------------------------------------------------------
 
-\begin{alertblock}{Future Work}
+\begin{block}{Future Work}
 	The goal of this poster is to outline the ground work done and review previous material on diversion, particularly related
 	to pyroprocessing. What needs to be accomplished proceeding this work is as follows:
 	\begin{itemize}
@@ -260,18 +272,12 @@ Prior work also exists in prevention of shadow fuel cycles through analysis of v
 		\item Create Cyclus output and compare to prior algorithms.
 		\item Assess capability of using Cyclus as online detection.
 	\end{itemize} 
-
-\end{alertblock}
-
-
-%--------------------------------------------------------
-% PROJECT TIMELINE
-%---------------------------------------------------------
-\begin{block}{Timeline}
-        \input{timeline}
+	\vspace{10mm}
+	A pyroprocessing plant must be simulated for the appropriate input data into Cyclus, with a focus on grid
+	information. Previously mentioned observables such as decay heat or smoke production are not well suited for
+	Cyclus \cite{Huff_2016}, therefore data such as power draw or possibly transportation times and frequency will be explored 
+	instead \cite{Hou_2016}.
 \end{block}
-
-
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
@@ -289,7 +295,6 @@ Prior work also exists in prevention of shadow fuel cycles through analysis of v
 	\begin{center}
 		\begin{tabular}{ccc}
 			\includegraphics[width=0.3\linewidth]{logo.png} & \includegraphics[width=0.3\linewidth]{cnec_oldlogo.png}
-			& \includegraphics[width=0.15\linewidth]{cyclus.png}
 		\end{tabular}
 	\end{center}
 	
