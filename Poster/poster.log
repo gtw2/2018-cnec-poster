@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.12.21)  19 JAN 2018 01:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.12.21)  25 JAN 2018 00:31
 entering extended mode
 **./poster.tex
 (poster.tex
@@ -1098,10 +1098,6 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 109.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\new@ifnextchar' on input line 109.
 
 
@@ -1256,13 +1252,13 @@ LaTeX Info: Redefining \includegraphics on input line 109.
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 109.
  (poster.nav)
-<NC_State_Logo.png, id=12, 229.85875pt x 36.135pt>
-File: NC_State_Logo.png Graphic file (type png)
- <use NC_State_Logo.png>
-Package pdftex.def Info: NC_State_Logo.png used on input line 109.
-(pdftex.def)             Requested size: 737.16148pt x 115.90831pt.
+<UIUC_Logo.jpg, id=12, 185.9748pt x 32.2806pt>
+File: UIUC_Logo.jpg Graphic file (type jpg)
+ <use UIUC_Logo.jpg>
+Package pdftex.def Info: UIUC_Logo.jpg used on input line 109.
+(pdftex.def)             Requested size: 737.16148pt x 127.97778pt.
 
-<cnec_logo.png, id=14, 197.73875pt x 44.165pt>
+<cnec_logo.png, id=13, 197.73875pt x 44.165pt>
 File: cnec_logo.png Graphic file (type png)
  <use cnec_logo.png>
 Package pdftex.def Info: cnec_logo.png used on input line 109.
@@ -1295,39 +1291,39 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 109.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 109.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 334.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 330.
  ("F:\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 334
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 330
 .
  ("F:\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd"
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Calculating math sizes for size <29.86> on input line 334.
+LaTeX Font Info:    Calculating math sizes for size <29.86> on input line 330.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <29.86> on input line 334.
+(Font)              <29.86> on input line 330.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.9019> on input line 334.
+(Font)              <20.9019> on input line 330.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.93> on input line 334.
+(Font)              <14.93> on input line 330.
 
-<fc-diagram.pdf, id=17, 489.87016pt x 646.36078pt>
+<fc-diagram.pdf, id=17, 347.8064pt x 646.36078pt>
 File: fc-diagram.pdf Graphic file (type pdf)
  <use fc-diagram.pdf>
-Package pdftex.def Info: fc-diagram.pdf used on input line 334.
-(pdftex.def)             Requested size: 780.52393pt x 1029.97716pt.
+Package pdftex.def Info: fc-diagram.pdf used on input line 330.
+(pdftex.def)             Requested size: 702.46677pt x 1305.65819pt.
 
 <Cyclus_graph.png, id=19, 496.10344pt x 383.93437pt>
 File: Cyclus_graph.png Graphic file (type png)
  <use Cyclus_graph.png>
-Package pdftex.def Info: Cyclus_graph.png used on input line 334.
+Package pdftex.def Info: Cyclus_graph.png used on input line 330.
 (pdftex.def)             Requested size: 702.46677pt x 543.67915pt.
 
 <Hou_Network.png, id=32, 654.94687pt x 586.69188pt>
 File: Hou_Network.png Graphic file (type png)
  <use Hou_Network.png>
-Package pdftex.def Info: Hou_Network.png used on input line 334.
+Package pdftex.def Info: Hou_Network.png used on input line 330.
 (pdftex.def)             Requested size: 654.94528pt x 586.69044pt.
 
 (timeline.tex
@@ -1388,33 +1384,33 @@ Overfull \hbox (27.78862pt too wide) in paragraph at lines 7--25
 ) <logo.png, id=37, 465.74pt x 220.825pt>
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 334.
+Package pdftex.def Info: logo.png used on input line 330.
 (pdftex.def)             Requested size: 234.15955pt x 111.0221pt.
 
 <cnec_oldlogo.png, id=38, 228.855pt x 58.2175pt>
 File: cnec_oldlogo.png Graphic file (type png)
  <use cnec_oldlogo.png>
-Package pdftex.def Info: cnec_oldlogo.png used on input line 334.
+Package pdftex.def Info: cnec_oldlogo.png used on input line 330.
 (pdftex.def)             Requested size: 234.15955pt x 59.56937pt.
 
 <cyclus.png, id=39, 150.5625pt x 150.5625pt>
 File: cyclus.png Graphic file (type png)
  <use cyclus.png>
-Package pdftex.def Info: cyclus.png used on input line 334.
+Package pdftex.def Info: cyclus.png used on input line 330.
 (pdftex.def)             Requested size: 117.07382pt x 117.07758pt.
  (poster.bbl)
-Overfull \hbox (32.51352pt too wide) detected at line 334
+Overfull \hbox (32.51352pt too wide) detected at line 330
 [][][][][][][][][][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][][]
  [][][][][][][][][] [][][][][][][]
  []
 
-File: NC_State_Logo.png Graphic file (type png)
-<use NC_State_Logo.png>
-Package pdftex.def Info: NC_State_Logo.png used on input line 334.
-(pdftex.def)             Requested size: 737.16148pt x 115.90831pt.
+File: UIUC_Logo.jpg Graphic file (type jpg)
+<use UIUC_Logo.jpg>
+Package pdftex.def Info: UIUC_Logo.jpg used on input line 330.
+(pdftex.def)             Requested size: 737.16148pt x 127.97778pt.
 File: cnec_logo.png Graphic file (type png)
  <use cnec_logo.png>
-Package pdftex.def Info: cnec_logo.png used on input line 334.
+Package pdftex.def Info: cnec_logo.png used on input line 330.
 (pdftex.def)             Requested size: 737.16148pt x 164.68692pt.
 
 Overfull \hbox (87.6345pt too wide) has occurred while \output is active
@@ -1423,8 +1419,8 @@ Overfull \hbox (87.6345pt too wide) has occurred while \output is active
 
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
- <./NC_State_Logo.png> <./cnec_logo.png> <./fc-diagram.pdf> <./Cyclus_graph.png
-> <./Hou_Network.png> <./logo.png> <./cnec_oldlogo.png> <./cyclus.png>]
+ <./UIUC_Logo.jpg> <./cnec_logo.png> <./fc-diagram.pdf> <./Cyclus_graph.png> <.
+/Hou_Network.png> <./logo.png> <./cnec_oldlogo.png> <./cyclus.png>]
 \tf@nav=\write6
 \openout6 = `poster.nav'.
 
@@ -1434,18 +1430,18 @@ Overfull \hbox (87.6345pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `poster.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 336.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 336.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 332.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 332.
  (poster.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 336.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 336.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 332.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 332.
 Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25228 strings out of 493320
- 509038 string characters out of 3145021
- 716889 words of memory out of 3000000
+ 25229 strings out of 493320
+ 509022 string characters out of 3145021
+ 715125 words of memory out of 3000000
  28129 multiletter control sequences out of 15000+200000
  79881 words of font info for 66 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1460,9 +1456,9 @@ X 2.9/fonts/type1/public/lm/lmbx12.pfb><F:/MiKTeX 2.9/fonts/type1/public/lm/lmr
 17.pfb><F:/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><F:/MiKTeX 2.9/fonts/typ
 e1/public/lm/lmss17.pfb><F:/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><F:/M
 iKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on poster.pdf (1 page, 743790 bytes).
+Output written on poster.pdf (1 page, 777524 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
+ 129 PDF objects out of 1000 (max. 8388607)
  10 named destinations out of 1000 (max. 500000)
  89 words of extra memory for PDF output out of 10000 (max. 10000000)
 
