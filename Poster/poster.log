@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.12.21)  25 JAN 2018 00:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.12.21)  25 JAN 2018 00:59
 entering extended mode
 **./poster.tex
 (poster.tex
@@ -1308,11 +1308,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.93> on input line 330.
 
-<fc-diagram.pdf, id=17, 347.8064pt x 646.36078pt>
+<fc-diagram.pdf, id=17, 290.58965pt x 646.36078pt>
 File: fc-diagram.pdf Graphic file (type pdf)
  <use fc-diagram.pdf>
 Package pdftex.def Info: fc-diagram.pdf used on input line 330.
-(pdftex.def)             Requested size: 702.46677pt x 1305.65819pt.
+(pdftex.def)             Requested size: 585.39294pt x 1302.20625pt.
 
 <Cyclus_graph.png, id=19, 496.10344pt x 383.93437pt>
 File: Cyclus_graph.png Graphic file (type png)
@@ -1441,7 +1441,7 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 Here is how much of TeX's memory you used:
  25229 strings out of 493320
  509022 string characters out of 3145021
- 715125 words of memory out of 3000000
+ 715134 words of memory out of 3000000
  28129 multiletter control sequences out of 15000+200000
  79881 words of font info for 66 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1456,7 +1456,7 @@ X 2.9/fonts/type1/public/lm/lmbx12.pfb><F:/MiKTeX 2.9/fonts/type1/public/lm/lmr
 17.pfb><F:/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><F:/MiKTeX 2.9/fonts/typ
 e1/public/lm/lmss17.pfb><F:/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><F:/M
 iKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on poster.pdf (1 page, 777524 bytes).
+Output written on poster.pdf (1 page, 777479 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  10 named destinations out of 1000 (max. 500000)

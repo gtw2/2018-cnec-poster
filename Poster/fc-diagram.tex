@@ -21,10 +21,10 @@
 \begin{tikzpicture}[node distance=3cm,
     every node/.style={fill=white, font=\sffamily}, align=center]
   % Specification of nodes (position, etc.)
-  \node (top) {};
-  \node (leach)             [process, left of=top] {In-Situ\\Leaching};
-  \node (mine)             [process, right of=top] {Mining};
-  \node (mill)     [process, below of=top, yshift=1cm]          {Milling};
+  \node (mine) 				[process] {Mining};
+  \node (leach)             [process, right of=mine, xshift=2cm] {In-Situ\\Leaching};
+  %\node (mine)             [process, right of=top] {Mining};
+  \node (mill)     [process, below of=mine, yshift=1cm]          {Milling};
   \node (conv)      [process, below of=mill]   {Conversion};
   \node (enr)     [process, below of=conv]   {Enrichment};
   \node (fuelfab)          [process, below of=enr] {Fuel Fabrication};
@@ -38,7 +38,7 @@
   % Specification of lines between nodes specified above
   % with aditional nodes for description 
 \draw[->]     (leach) |- (mill) node[midway] {unpurified\\$U_3O_8$};
-\draw[->]     (mine) |- (mill) node[midway] {ore};
+\draw[->]     (mine) -- (mill) node[midway] {ore};
 \draw[->]     (mill) -- (conv) node[midway] {yellowcake\\$U_3O_8$};
 \draw[->]      (conv) -- (enr) node[midway] {uranium hexafluoride\\$UF_6$};
 \draw[->]     (enr) -- (fuelfab) node[midway] {enriched uranium\\hexafluoride};
